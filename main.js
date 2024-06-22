@@ -18,12 +18,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Add grey circles
     addShape('shape-1', 300, 300, 15, 25);
-    addShape('shape-2', 500, 500, 50, 70);
+    addShape('shape-2', 100, 100, 50, 70);
     addShape('shape-3', 200, 200, 70, 20);
     addShape('shape-4', 400, 400, 20, 60);
     addShape('shape-5', 150, 150, 80, 40);
-    addShape('shape-6', 250, 250, 40, 50);
-    addShape('shape-7', 350, 350, 30, 75);
+    addShape('shape-6', 80, 80, 40, 50);
+    addShape('shape-7', 50, 50, 30, 75);
 
     // Add hollow circles
     addShape('hollow', 200, 200, 10, 10);
