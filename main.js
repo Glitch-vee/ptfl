@@ -1,22 +1,4 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-document.addEventListener('DOMContentLoaded', async function () {
-    // Firebase configuration
-    const firebaseConfig = {
-        apiKey: "AIzaSyBcqJT6Hh7XYWry2zGWrZRDjR4_pdpLHRM",
-        authDomain: "alvees-portfolio.firebaseapp.com",
-        projectId: "alvees-portfolio",
-        storageBucket: "alvees-portfolio.appspot.com",
-        messagingSenderId: "351171242982",
-        appId: "1:351171242982:web:0bf76743afc71529fc4427",
-        measurementId: "G-C23N06PN34"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-
+document.addEventListener('DOMContentLoaded', function () {
     // Initialize AOS animations
     AOS.init({
         duration: 1000,
@@ -24,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     });
 
     // Handle contact form submission
-    document.getElementById('contactForm').addEventListener('submit', async function (event) {
+    document.getElementById('contactForm')?.addEventListener('submit', async function (event) {
         event.preventDefault();
 
         const formData = {
@@ -66,48 +48,60 @@ document.addEventListener('DOMContentLoaded', async function () {
         });
     });
 
-    // Fetch and display skills from Firestore
-    try {
-        const skillsContainer = document.getElementById("skillsAccordion");
-        const skillsSnapshot = await getDocs(collection(db, "skills"));
-
-        skillsSnapshot.forEach((doc) => {
-            const skill = doc.data();
-            const card = document.createElement("div");
-            card.classList.add("card");
-
-            const cardHeader = document.createElement("div");
-            cardHeader.classList.add("card-header");
-            cardHeader.id = "heading" + doc.id;
-
-            const button = document.createElement("button");
-            button.classList.add("btn", "btn-link", "collapsed");
-            button.type = "button";
-            button.setAttribute("data-toggle", "collapse");
-            button.setAttribute("data-target", "#collapse" + doc.id);
-            button.setAttribute("aria-expanded", "false");
-            button.setAttribute("aria-controls", "collapse" + doc.id);
-            button.innerText = skill.name;
-
-            cardHeader.appendChild(button);
-            card.appendChild(cardHeader);
-
-            const collapse = document.createElement("div");
-            collapse.id = "collapse" + doc.id;
-            collapse.classList.add("collapse");
-            collapse.setAttribute("aria-labelledby", "heading" + doc.id);
-            collapse.setAttribute("data-parent", "#skillsAccordion");
-
-            const cardBody = document.createElement("div");
-            cardBody.classList.add("card-body");
-            cardBody.innerText = skill.description;
-
-            collapse.appendChild(cardBody);
-            card.appendChild(collapse);
-
-            skillsContainer.appendChild(card);
-        });
-    } catch (error) {
-        console.error("Error fetching skills: ", error);
+    // Add new shapes dynamically
+    function addShape(className, width, height, top, left) {
+        const shape = document.createElement('div');
+        shape.classList.add('shape', className);
+        shape.style.width = width + 'px';
+        shape.style.height = height + 'px';
+        shape.style.top = top + '%';
+        shape.style.left = left + '%';
+        document.querySelector('.background-shapes').appendChild(shape);
     }
+
+    // Add grey circles
+    addShape('shape-1', 300, 300, 15, 25);
+    addShape('shape-2', 500, 500, 50, 70);
+    addShape('shape-3', 200, 200, 70, 20);
+    addShape('shape-4', 400, 400, 20, 60);
+    addShape('shape-5', 150, 150, 80, 40);
+    addShape('shape-6', 250, 250, 40, 50);
+    addShape('shape-7', 350, 350, 30, 75);
+
+    // Add hollow circles
+    addShape('shape hollow', 200, 200, 10, 10);
+    addShape('shape hollow', 300, 300, 60, 20);
+
+    // Add small circles
+    addShape('shape small', 100, 100, 50, 10);
+    addShape('shape small', 100, 100, 80, 90);
+    addShape('shape small', 100, 100, 20, 80);
+
+    // Add squares
+    function addSquare(width, height, top, left) {
+        const shape = document.createElement('div');
+        shape.classList.add('shape', 'square');
+        shape.style.width = width + 'px';
+        shape.style.height = height + 'px';
+        shape.style.top = top + '%';
+        shape.style.left = left + '%';
+        document.querySelector('.background-shapes').appendChild(shape);
+    }
+
+    addSquare(150, 150, 30, 40);
+    addSquare(100, 100, 70, 30);
+    addSquare(200, 200, 50, 60);
+
+    // Add triangles
+    function addTriangle(top, left) {
+        const shape = document.createElement('div');
+        shape.classList.add('shape', 'triangle');
+        shape.style.top = top + '%';
+        shape.style.left = left + '%';
+        document.querySelector('.background-shapes').appendChild(shape);
+    }
+
+    addTriangle(20, 80);
+    addTriangle(40, 20);
+    addTriangle(70, 50);
 });
