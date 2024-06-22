@@ -5,49 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
         once: true,
     });
 
-    // Handle contact form submission
-    document.getElementById('contactForm')?.addEventListener('submit', async function (event) {
-        event.preventDefault();
-
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            subject: document.getElementById('subject').value,
-            message: document.getElementById('message').value,
-        };
-
-        try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-
-            if (response.ok) {
-                alert('Message sent successfully!');
-                document.getElementById('contactForm').reset();
-            } else {
-                alert('Failed to send message');
-            }
-        } catch (err) {
-            console.error(err);
-            alert('An error occurred');
-        }
-    });
-
-    // Handle accordion behavior for skills section
-    document.querySelectorAll('.collapse').forEach(function (collapse) {
-        collapse.addEventListener('shown.bs.collapse', function () {
-            document.querySelectorAll('.collapse').forEach(function (otherCollapse) {
-                if (otherCollapse !== collapse) {
-                    otherCollapse.classList.remove('show');
-                }
-            });
-        });
-    });
-
     // Add new shapes dynamically
     function addShape(className, width, height, top, left) {
         const shape = document.createElement('div');
@@ -69,13 +26,13 @@ document.addEventListener('DOMContentLoaded', function () {
     addShape('shape-7', 350, 350, 30, 75);
 
     // Add hollow circles
-    addShape('shape hollow', 200, 200, 10, 10);
-    addShape('shape hollow', 300, 300, 60, 20);
+    addShape('hollow', 200, 200, 10, 10);
+    addShape('hollow', 300, 300, 60, 20);
 
     // Add small circles
-    addShape('shape small', 100, 100, 50, 10);
-    addShape('shape small', 100, 100, 80, 90);
-    addShape('shape small', 100, 100, 20, 80);
+    addShape('small', 100, 100, 50, 10);
+    addShape('small', 100, 100, 80, 90);
+    addShape('small', 100, 100, 20, 80);
 
     // Add squares
     function addSquare(width, height, top, left) {
