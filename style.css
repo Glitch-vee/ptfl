@@ -1,0 +1,279 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Aesthetic color palette */
+:root {
+    --primary-color: #000;
+    --secondary-color: #fff;
+    --accent-color: #4A90E2;
+    --text-color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--secondary-color);
+}
+
+.navbar-brand {
+    color: var(--primary-color);
+}
+
+.nav-link {
+    color: var(--primary-color);
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+#hero {
+    background: url('https://i.ibb.co/44j6GPj/20240524-112635-copy-1530x2040.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+.hero-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 3rem; /* Adjust size as needed */
+    font-weight: bold;
+    color: #ffffff; /* White color for contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: add shadow for more visibility */
+}
+
+.hero-subtitle {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5rem; /* Adjust size as needed */
+    font-weight: normal;
+    color: #ffffff; /* White color for contrast */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Optional: add shadow for more visibility */
+}
+
+#hero .btn {
+    background-color: var(--accent-color);
+    border: none;
+    padding: 1rem 2rem;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#hero .btn:hover {
+    background-color: var(--primary-color);
+}
+
+/* Section Styles */
+section {
+    padding: 4rem 2rem;
+}
+
+.section-bg {
+    background-color: var(--secondary-color);
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+/* About Section */
+#about img {
+    border-radius: 10px; /* Rounded corners, change to 50% for a circle */
+    border: 2px solid #fff; /* White border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+.about .content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.about .content p {
+    font-size: 1.125rem;
+    color: var(--text-color);
+}
+
+.about .social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+    color: var(--primary-color);
+}
+
+.about .social-icons a img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.about .social-icons a:hover img {
+    transform: scale(1.2);
+}
+
+.about .row {
+    display: flex;
+    align-items: center; /* Vertically center align the content */
+}
+
+/* Skills Section */
+.skills .card {
+    border: none;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills .card-header {
+    background-color: var(--secondary-color);
+    border-bottom: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.skills .card-header:hover {
+    background-color: var(--accent-color);
+}
+
+.skills .card-header button {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    background: none;
+    border: none;
+    outline: none;
+    transition: color 0.3s ease;
+}
+
+.skills .card-header button:focus {
+    color: var(--accent-color);
+}
+
+.skills .collapse {
+    transition: height 0.3s ease;
+}
+
+.skills .card-body {
+    padding: 1rem;
+    background-color: var(--secondary-color);
+    border-top: 1px solid var(--primary-color);
+}
+
+/* My Works Section */
+.work-item {
+    padding: 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-item:hover {
+    background-color: var(--accent-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.work-item h4,
+.work-item p {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.work-item a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+}
+
+.work-item a:hover {
+    color: inherit; /* Ensure the color doesn't change on hover */
+}
+
+/* Contact Section */
+.contact .section-title h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.contact .contact-link {
+    display: block;
+    margin: 20px 0;
+    text-align: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: transform 0.3s, color 0.3s;
+}
+
+.contact .contact-link img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 10px;
+}
+
+.contact .contact-link p {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.contact .contact-link:hover {
+    transform: scale(1.05);
+    color: var (--accent-color);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--secondary-color);
+    padding: 2rem 0;
+}
+
+.footer p {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.footer h5 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.footer .social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+    color: var(--primary-color);
+}
+
+.footer .social-icons a img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.footer .social-icons a:hover img {
+    transform: scale(1.2);
+}
+
+.footer p, .footer ul {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
