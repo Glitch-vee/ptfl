@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #111;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.logo span {
+    color: red;
+}
+
+.menu-toggle {
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #222;
+    padding: 10px;
+    position: sticky;
+    top: 50px;
+    z-index: 999;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: red;
+}
+
+.apply-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #222;
+}
+
+.apply-section h2 {
+    font-size: 2em;
+}
+
+.apply-section p {
+    max-width: 600px;
+    margin: auto;
+}
+
+.apply-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.apply-section label {
+    align-self: flex-start;
+    font-size: 1.1em;
+}
+
+.apply-section input, .apply-section textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+.apply-section button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: red;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.apply-section button:hover {
+    background-color: darkred;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #111;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar ul li {
+        margin-bottom: 10px;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
