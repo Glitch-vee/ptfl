@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Student Startups - Agent V</title>
+    <link rel="stylesheet" href="apply.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Agent <span>V</span></h1>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    </header>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#work">Our Work</a></li>
+            <li><a href="index.html#startups">Student Startups</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="apply-section">
+            <h2>Apply for Student Startups</h2>
+            <p>We are excited to hear about your innovative ideas. Please fill out the form below to submit your pitch deck and other required information.</p>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="pitch-deck">Pitch Deck (PDF):</label>
+                <input type="file" id="pitch-deck" name="pitch-deck" accept="application/pdf" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Agent V. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
