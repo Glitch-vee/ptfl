@@ -1,4 +1,4 @@
 function toggleMenu() {
-    const panel = document.getElementById('slide-panel');
-    panel.classList.toggle('active');
+    const slidePanel = document.getElementById('slide-panel');
+    slidePanel.classList.toggle('active');
 }
