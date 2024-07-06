@@ -13,13 +13,14 @@
         </div>
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     </header>
-    <nav class="navbar">
+    <nav class="slide-panel" id="slide-panel">
+        <button class="close-btn" onclick="toggleMenu()">✖</button>
         <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#work">Our Work</a></li>
-            <li><a href="#startups">Student Startups</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#services" onclick="toggleMenu()">Services</a></li>
+            <li><a href="#about" onclick="toggleMenu()">About Us</a></li>
+            <li><a href="#work" onclick="toggleMenu()">Our Work</a></li>
+            <li><a href="#startups" onclick="toggleMenu()">Student Startups</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </ul>
     </nav>
     <main>
@@ -50,7 +51,7 @@
         <section id="startups">
             <h2>Student Startups</h2>
             <p>We are passionate about fostering innovation among students. By investing resources or offering discounted development and prototyping services, we help student startups turn their ideas into reality. If you have a groundbreaking idea, pitch it to us and let’s make it happen together!</p>
-            <a href="apply.html" class="apply-button">Apply</a>
+            <a href="apply.html" class="apply-button">Apply Now</a>
         </section>
         <section class="testimonials" id="testimonials">
             <h2>Client Testimonials</h2>
@@ -87,16 +88,10 @@
             </form>
         </section>
     </main>
-    <div class="slide-panel" id="slide-panel">
-        <button class="close-btn" onclick="toggleMenu()">✖</button>
-        <div class="panel-content">
-            <h2>Additional Information</h2>
-            <p>Here you can add more information about your services, company history, testimonials, etc.</p>
-        </div>
-    </div>
     <footer>
         <p>&copy; 2024 Agent V. All rights reserved.</p>
     </footer>
     <script src="scripts.js"></script>
 </body>
 </html>
+
